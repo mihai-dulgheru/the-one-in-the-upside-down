@@ -1,4 +1,4 @@
-# The One Where Loves Ana 💜
+# The One Where Mi Loves Ana 💜
 
 A romantic, interactive Valentine's Day web application that merges the cozy 90s sitcom aesthetic of **Friends** with the dark, mysterious atmosphere of **Stranger Things**.
 

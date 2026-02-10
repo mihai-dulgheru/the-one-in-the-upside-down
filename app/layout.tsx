@@ -16,7 +16,7 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "The One Where Loves Ana - Valentine's Day",
+  title: "The One Where Mi Loves Ana - Valentine's Day",
   description: "A romantic crossover between Friends and Stranger Things",
 };
 

@@ -26,7 +26,7 @@ export default function HeroSection() {
             : "var(--font-permanent-marker)",
         }}
       >
-        The One Where
+        The One Where Mi
         <br />
         <span className="relative inline-block">
           Loves Ana

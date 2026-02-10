@@ -8,19 +8,115 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Friends Theme (Default) */
+[data-theme="friends"] {
+  --background: #5f4b8b;
+  --foreground: #ffffff;
+  /* Changed from #2D2415 to white for better contrast */
+  --accent: #f9d059;
+  --secondary: #e07a5f;
+}
+
+/* Stranger Things Theme */
+[data-theme="stranger-things"] {
+  --background: #090909;
+  --foreground: #ffffff;
+  /* Changed from #EDEDED to pure white for better contrast */
+  --accent: #e71d36;
+  --secondary: #2ec4b6;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.7s ease,
+    color 0.7s ease;
+  font-family: "Inter", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hero text styling */
+.hero-text {
+  color: var(--foreground);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="stranger-things"] .hero-text {
+  color: var(--accent);
+  text-shadow:
+    0 0 20px var(--accent),
+    0 0 40px var(--accent);
+}
+
+/* Portal Frame */
+.portal-frame {
+  transition: transform 0.3s ease;
+}
+
+.portal-frame:hover {
+  transform: scale(1.02);
+}
+
+/* Message Wall Background */
+.light-wall-bg {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="stranger-things"] .light-wall-bg {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(231, 29, 54, 0.3);
+}
+
+/* Grid layout for alphabet */
+.grid-cols-13 {
+  display: grid;
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+}
+
+/* Animations */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px currentColor;
+  }
+
+  50% {
+    box-shadow:
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .grid-cols-13 {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
 }

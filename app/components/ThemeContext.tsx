@@ -15,7 +15,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("friends");
 
   useEffect(() => {
-    // Apply theme to document root
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 

@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeContext";
 
-// Generate spores at module level (runs once when module loads)
-// This satisfies React's strict purity rules by moving impure code outside the component
 const SPORES = Array.from({ length: 30 }, (_, i) => ({
   id: i,
   x: Math.random() * 100,

@@ -14,7 +14,6 @@ export default function YellowFramePortal() {
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 0.4, duration: 0.6 }}
     >
-      {/* Monica's Peephole Frame */}
       <div className="relative inline-block">
         <div className="portal-frame rounded-lg bg-linear-to-br from-yellow-400 via-yellow-500 to-yellow-600 p-3 shadow-2xl md:p-4">
           <div className="overflow-hidden rounded-lg border-4 border-yellow-300">
@@ -29,7 +28,6 @@ export default function YellowFramePortal() {
                   priority
                 />
               )}
-              {/* Placeholder overlay - only shows when image fails to load */}
               {imageError && (
                 <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-purple-200 to-pink-200">
                   <div className="p-6 text-center">
@@ -46,7 +44,7 @@ export default function YellowFramePortal() {
             </div>
           </div>
         </div>
-        {/* Corner decorations */}
+
         <div className="absolute -top-2 -left-2 h-4 w-4 rounded-full bg-yellow-400 shadow"></div>
         <div className="absolute -top-2 -right-2 h-4 w-4 rounded-full bg-yellow-400 shadow"></div>
         <div className="absolute -bottom-2 -left-2 h-4 w-4 rounded-full bg-yellow-400 shadow"></div>

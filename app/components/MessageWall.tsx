@@ -11,7 +11,6 @@ export default function MessageWall() {
   const [message, setMessage] = useState("");
   const [lastMessageLength, setLastMessageLength] = useState(0);
 
-  // Compute active lights as a derived value instead of storing in state
   const activeLights = useMemo(() => {
     if (message.length === 0) {
       return new Set<string>();
@@ -23,7 +22,6 @@ export default function MessageWall() {
     return new Set(letters);
   }, [message]);
 
-  // Derive the blinking light from message change
   const blinkingLight = useMemo(() => {
     if (message.length === 0 || message.length <= lastMessageLength) {
       return null;
@@ -35,7 +33,6 @@ export default function MessageWall() {
     return letters[letters.length - 1] || null;
   }, [message, lastMessageLength]);
 
-  // Update last message length after blinking animation
   useEffect(() => {
     if (message.length !== lastMessageLength) {
       const timer = setTimeout(() => {
@@ -50,13 +47,13 @@ export default function MessageWall() {
     const isBlinking = blinkingLight === letter;
 
     if (theme === "stranger-things") {
-      if (isBlinking) return "#E71D36"; // Red glow for blinking
-      if (isActive) return "#FF6B6B"; // Lighter red for active
-      return "#4A0E0E"; // Dark red for inactive
+      if (isBlinking) return "#E71D36";
+      if (isActive) return "#FF6B6B";
+      return "#4A0E0E";
     } else {
-      if (isBlinking) return "#F9D059"; // Yellow glow for blinking
-      if (isActive) return "#FCD34D"; // Bright yellow for active
-      return "#D1B36A"; // Muted yellow for inactive
+      if (isBlinking) return "#F9D059";
+      if (isActive) return "#FCD34D";
+      return "#D1B36A";
     }
   };
 
@@ -73,7 +70,6 @@ export default function MessageWall() {
           : "Joyce's Christmas Lights"}
       </h2>
 
-      {/* Letter Lights Grid */}
       <div className="light-wall-bg mb-8 rounded-lg p-6">
         <div className="mb-6 grid grid-cols-13 gap-2 md:gap-3">
           {ALPHABET.map((letter) => (
@@ -113,7 +109,6 @@ export default function MessageWall() {
           ))}
         </div>
 
-        {/* Input Field */}
         <div className="relative">
           <input
             type="text"

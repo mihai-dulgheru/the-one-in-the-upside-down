@@ -12,7 +12,6 @@ export default function CelebrationOverlay({
   onClose,
 }: CelebrationOverlayProps) {
   useEffect(() => {
-    // Fire confetti immediately
     const duration = 5000;
     const animationEnd = Date.now() + duration;
 
@@ -26,7 +25,6 @@ export default function CelebrationOverlay({
 
       const particleCount = 50 * (timeLeft / duration);
 
-      // Fire confetti from both sides
       confetti({
         particleCount,
         angle: 60,
@@ -60,11 +58,9 @@ export default function CelebrationOverlay({
         animate={{ scale: 1, rotate: 0 }}
         transition={{ type: "spring", duration: 0.7 }}
       >
-        {/* Yellow Frame like Monica's Peephole */}
         <div className="relative rounded-lg bg-linear-to-br from-yellow-400 via-yellow-500 to-yellow-600 p-6 shadow-2xl md:p-8">
           <div className="overflow-hidden rounded-lg border-4 border-yellow-300 bg-purple-900 p-8 md:p-12">
             <div className="max-w-md text-center">
-              {/* Lobster emoji */}
               <motion.div
                 className="mb-6 text-8xl"
                 animate={{
@@ -79,7 +75,6 @@ export default function CelebrationOverlay({
                 🦞
               </motion.div>
 
-              {/* Message */}
               <motion.h1
                 className="mb-4 text-3xl font-bold text-yellow-400 md:text-5xl"
                 style={{ fontFamily: "var(--font-permanent-marker)" }}
@@ -110,7 +105,6 @@ export default function CelebrationOverlay({
                 <br />- Phoebe Buffay
               </motion.p>
 
-              {/* Close button (optional) */}
               {onClose && (
                 <motion.button
                   onClick={onClose}
@@ -125,7 +119,6 @@ export default function CelebrationOverlay({
             </div>
           </div>
 
-          {/* Corner decorations */}
           <div className="absolute -top-2 -left-2 h-6 w-6 rounded-full bg-yellow-400 shadow"></div>
           <div className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-yellow-400 shadow"></div>
           <div className="absolute -bottom-2 -left-2 h-6 w-6 rounded-full bg-yellow-400 shadow"></div>

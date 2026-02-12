@@ -17,7 +17,9 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   title: "The One Where Mi Loves Ana - Valentine's Day",
-  description: "A romantic crossover between Friends and Stranger Things",
+  description:
+    "A romantic crossover between Friends and Stranger Things — by Mihai-Nicolae Dulgheru",
+  authors: [{ name: "Mihai-Nicolae Dulgheru" }],
 };
 
 export default function RootLayout({

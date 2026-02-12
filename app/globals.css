@@ -10,20 +10,16 @@
   --color-foreground: var(--foreground);
 }
 
-/* Friends Theme (Default) */
 [data-theme="friends"] {
   --background: #5f4b8b;
   --foreground: #ffffff;
-  /* Changed from #2D2415 to white for better contrast */
   --accent: #f9d059;
   --secondary: #e07a5f;
 }
 
-/* Stranger Things Theme */
 [data-theme="stranger-things"] {
   --background: #090909;
   --foreground: #ffffff;
-  /* Changed from #EDEDED to pure white for better contrast */
   --accent: #e71d36;
   --secondary: #2ec4b6;
 }
@@ -38,7 +34,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Hero text styling */
 .hero-text {
   color: var(--foreground);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -51,7 +46,6 @@ body {
     0 0 40px var(--accent);
 }
 
-/* Portal Frame */
 .portal-frame {
   transition: transform 0.3s ease;
 }
@@ -60,7 +54,6 @@ body {
   transform: scale(1.02);
 }
 
-/* Message Wall Background */
 .light-wall-bg {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -72,13 +65,11 @@ body {
   border: 2px solid rgba(231, 29, 54, 0.3);
 }
 
-/* Grid layout for alphabet */
 .grid-cols-13 {
   display: grid;
   grid-template-columns: repeat(13, minmax(0, 1fr));
 }
 
-/* Animations */
 @keyframes blink {
   0%,
   100% {
@@ -114,7 +105,6 @@ body {
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 640px) {
   .grid-cols-13 {
     grid-template-columns: repeat(9, minmax(0, 1fr));

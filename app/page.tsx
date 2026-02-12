@@ -11,13 +11,9 @@ import YellowFramePortal from "./components/YellowFramePortal";
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Floating Spores (Stranger Things only) */}
       <FloatingSpores />
-
-      {/* Theme Toggle Button */}
       <ThemeToggle />
 
-      {/* Main Content */}
       <main className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-16 md:px-8">
         <motion.div
           className="flex w-full max-w-4xl flex-col items-center"
@@ -25,16 +21,10 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          {/* Hero Section */}
           <HeroSection />
-
-          {/* Yellow Frame Portal (Photo) */}
           <YellowFramePortal />
-
-          {/* Interactive Message Wall */}
           <MessageWall />
 
-          {/* Footer */}
           <motion.footer
             className="mt-12 text-center"
             initial={{ opacity: 0 }}
@@ -47,7 +37,6 @@ export default function Home() {
             <p className="mt-4 text-sm opacity-85">Made with 💜 and ☕</p>
           </motion.footer>
 
-          {/* Proposal Section - The Big Question! */}
           <ProposalSection />
         </motion.div>
       </main>

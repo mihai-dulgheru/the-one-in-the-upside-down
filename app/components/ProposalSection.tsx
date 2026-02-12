@@ -8,7 +8,6 @@ import { useTheme } from "./ThemeContext";
 export default function ProposalSection() {
   const { theme } = useTheme();
   const [showCelebration, setShowCelebration] = useState(false);
-  // Start button at a visible position (right side, slightly below center)
   const [noButtonPosition, setNoButtonPosition] = useState({ x: 200, y: 80 });
   const [chaseCount, setChaseCount] = useState(0);
   const [isGlitching, setIsGlitching] = useState(false);
@@ -23,15 +22,12 @@ export default function ProposalSection() {
   const handleNoHover = () => {
     if (!containerRef.current) return;
 
-    // Use conservative bounds - keep button in a safe central area
-    // Container is max-w-4xl (896px) but could be smaller on mobile
     const containerWidth = containerRef.current.clientWidth;
 
-    // Very conservative bounds to ensure button always stays visible
     const minX = 50;
-    const maxX = Math.min(containerWidth - 150, 600); // Leave plenty of room
-    const minY = 150; // Below heading
-    const maxY = 280; // Above helper text
+    const maxX = Math.min(containerWidth - 150, 600);
+    const minY = 150;
+    const maxY = 280;
 
     const randomX = minX + Math.random() * (maxX - minX);
     const randomY = minY + Math.random() * (maxY - minY);
@@ -39,11 +35,9 @@ export default function ProposalSection() {
     setNoButtonPosition({ x: randomX, y: randomY });
     setChaseCount((prev) => prev + 1);
 
-    // Trigger glitch effect occasionally after 2 chases (30% chance)
     if (chaseCount >= 2 && Math.random() < 0.3) {
       setIsGlitching(true);
 
-      // Random text change
       const glitchTexts = [
         "Pivot!",
         "Friends Don't Lie!",
@@ -57,7 +51,6 @@ export default function ProposalSection() {
         glitchTexts[Math.floor(Math.random() * glitchTexts.length)];
       setNoButtonText(randomText);
 
-      // Reset after glitch
       setTimeout(() => {
         setIsGlitching(false);
         setNoButtonText("No");
@@ -84,7 +77,6 @@ export default function ProposalSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
       >
-        {/* Heading */}
         <motion.h2
           className="proposal-heading mb-12 text-center text-4xl font-bold md:text-6xl"
           style={{
@@ -108,9 +100,7 @@ export default function ProposalSection() {
           Will you be my Valentine?
         </motion.h2>
 
-        {/* Buttons Container */}
         <div className="relative flex flex-col items-center justify-center gap-6 md:flex-row md:gap-8">
-          {/* YES Button */}
           <motion.button
             onClick={handleYesClick}
             className="transform rounded-full px-12 py-6 text-2xl font-bold shadow-2xl transition-all duration-300 hover:scale-110 md:text-3xl"
@@ -128,7 +118,6 @@ export default function ProposalSection() {
             YES! (Obviously)
           </motion.button>
 
-          {/* NO Button - Runaway */}
           <motion.button
             ref={noButtonRef}
             onMouseEnter={handleNoHover}
@@ -156,7 +145,6 @@ export default function ProposalSection() {
           </motion.button>
         </div>
 
-        {/* Helper text */}
         <motion.p
           className="mt-8 text-center text-sm opacity-90"
           initial={{ opacity: 0 }}
@@ -171,14 +159,12 @@ export default function ProposalSection() {
         </motion.p>
       </motion.section>
 
-      {/* Celebration Overlay */}
       <AnimatePresence>
         {showCelebration && (
           <CelebrationOverlay onClose={() => setShowCelebration(false)} />
         )}
       </AnimatePresence>
 
-      {/* Glitch animation CSS */}
       <style jsx>{`
         @keyframes glitch {
           0% {

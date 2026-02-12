@@ -21,7 +21,9 @@ A romantic, interactive Valentine's Day web application that merges the cozy 90s
 - **Yellow Frame Portal**: Photo container styled as Monica's peephole frame
 - **Message Wall**: Interactive A-Z Christmas lights that blink as you type (Joyce Byers style!)
 - **Floating Spores**: Atmospheric particle effects in dark theme
-- **Theme Toggle**: Coffee cup ☕ / Waffle 🧇 icon button
+- **Proposal Section**: Valentine's question with a runaway "No" button and glitch effects
+- **Celebration Overlay**: Confetti explosion with a Friends-themed lobster reveal
+- **Theme Toggle**: Coffee cup ☕ / Utensils 🍴 icon button
 
 ### 🎬 Animations
 
@@ -75,6 +77,7 @@ Replace the placeholder image with your couple photo:
 - **Styling**: Tailwind CSS 4
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
+- **Confetti**: canvas-confetti
 - **Fonts**: Google Fonts (Permanent Marker, Merriweather)
 
 ## 📁 Project Structure
@@ -82,25 +85,27 @@ Replace the placeholder image with your couple photo:
 ```text
 app/
 ├── components/
-│   ├── ThemeContext.tsx      # Global theme state
-│   ├── ThemeToggle.tsx       # Theme switcher button
-│   ├── HeroSection.tsx       # Main heading with animations
-│   ├── YellowFramePortal.tsx # Photo frame component
-│   ├── MessageWall.tsx       # Interactive light wall
-│   └── FloatingSpores.tsx    # Particle effects
-├── layout.tsx                # Root layout
-├── page.tsx                  # Main page
-└── globals.css               # Global styles
+│   ├── CelebrationOverlay.tsx # Confetti celebration modal
+│   ├── FloatingSpores.tsx     # Particle effects
+│   ├── HeroSection.tsx        # Main heading with animations
+│   ├── MessageWall.tsx        # Interactive light wall
+│   ├── ProposalSection.tsx    # Valentine's proposal with runaway button
+│   ├── ThemeContext.tsx       # Global theme state
+│   ├── ThemeToggle.tsx        # Theme switcher button
+│   └── YellowFramePortal.tsx  # Photo frame component
+├── layout.tsx                 # Root layout
+├── page.tsx                   # Main page
+└── globals.css                # Global styles
 ```
 
 ## 🎨 Customization
 
 ### Change the Name
 
-Edit `app/components/HeroSection.tsx` line 25:
+Edit `app/components/HeroSection.tsx` line 32:
 
 ```tsx
-Loves Ana  // Change "Ana" to your name
+Loves Ana
 ```
 
 ### Modify Colors
@@ -154,6 +159,10 @@ Or use the [Vercel Dashboard](https://vercel.com/new) for one-click deployment.
 ## 📝 License
 
 This project is open source and available for personal use.
+
+## Author
+
+Mihai-Nicolae Dulgheru
 
 ---
 

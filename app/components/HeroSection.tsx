@@ -9,13 +9,13 @@ export default function HeroSection() {
 
   return (
     <motion.div
-      className="text-center mb-12 relative"
+      className="relative mb-12 text-center"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
       <motion.h1
-        className="hero-text text-4xl md:text-6xl lg:text-7xl font-bold mb-4 transition-all duration-700"
+        className="hero-text mb-4 text-4xl font-bold transition-all duration-700 md:text-6xl lg:text-7xl"
         animate={{
           rotate: isStrangerThings ? 180 : 0,
         }}
@@ -51,7 +51,7 @@ export default function HeroSection() {
         </span>
       </motion.h1>
       <motion.p
-        className="text-lg md:text-xl opacity-95"
+        className="text-lg opacity-95 md:text-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.95 }}
         transition={{ delay: 0.3, duration: 0.8 }}

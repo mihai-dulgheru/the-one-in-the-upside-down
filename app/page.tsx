@@ -1,16 +1,16 @@
 "use client";
 
-import ThemeToggle from "./components/ThemeToggle";
-import HeroSection from "./components/HeroSection";
-import YellowFramePortal from "./components/YellowFramePortal";
-import MessageWall from "./components/MessageWall";
-import FloatingSpores from "./components/FloatingSpores";
-import ProposalSection from "./components/ProposalSection";
 import { motion } from "framer-motion";
+import FloatingSpores from "./components/FloatingSpores";
+import HeroSection from "./components/HeroSection";
+import MessageWall from "./components/MessageWall";
+import ProposalSection from "./components/ProposalSection";
+import ThemeToggle from "./components/ThemeToggle";
+import YellowFramePortal from "./components/YellowFramePortal";
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Floating Spores (Stranger Things only) */}
       <FloatingSpores />
 
@@ -18,9 +18,9 @@ export default function Home() {
       <ThemeToggle />
 
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-16 md:px-8">
+      <main className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-16 md:px-8">
         <motion.div
-          className="w-full max-w-4xl flex flex-col items-center"
+          className="flex w-full max-w-4xl flex-col items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -41,10 +41,10 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <p className="text-lg md:text-xl font-medium italic">
+            <p className="text-lg font-medium italic md:text-xl">
               &quot;I&apos;ll be there for you... even in the Upside Down.&quot;
             </p>
-            <p className="text-sm mt-4 opacity-85">Made with 💜 and ☕</p>
+            <p className="mt-4 text-sm opacity-85">Made with 💜 and ☕</p>
           </motion.footer>
 
           {/* Proposal Section - The Big Question! */}

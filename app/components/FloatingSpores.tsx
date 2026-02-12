@@ -23,7 +23,7 @@ export default function FloatingSpores() {
   }
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       {SPORES.map((spore) => (
         <motion.div
           key={spore.id}

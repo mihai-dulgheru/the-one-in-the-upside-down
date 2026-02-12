@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Permanent_Marker, Merriweather } from "next/font/google";
-import "./globals.css";
+import { Merriweather, Permanent_Marker } from "next/font/google";
 import { ThemeProvider } from "./components/ThemeContext";
+import "./globals.css";
 
 const permanentMarker = Permanent_Marker({
   weight: "400",

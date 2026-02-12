@@ -61,12 +61,12 @@ export default function CelebrationOverlay({
         transition={{ type: "spring", duration: 0.7 }}
       >
         {/* Yellow Frame like Monica's Peephole */}
-        <div className="relative p-6 md:p-8 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-lg shadow-2xl">
-          <div className="border-4 border-yellow-300 rounded-lg overflow-hidden bg-purple-900 p-8 md:p-12">
-            <div className="text-center max-w-md">
+        <div className="relative rounded-lg bg-linear-to-br from-yellow-400 via-yellow-500 to-yellow-600 p-6 shadow-2xl md:p-8">
+          <div className="overflow-hidden rounded-lg border-4 border-yellow-300 bg-purple-900 p-8 md:p-12">
+            <div className="max-w-md text-center">
               {/* Lobster emoji */}
               <motion.div
-                className="text-8xl mb-6"
+                className="mb-6 text-8xl"
                 animate={{
                   rotate: [0, -10, 10, -10, 0],
                 }}
@@ -81,7 +81,7 @@ export default function CelebrationOverlay({
 
               {/* Message */}
               <motion.h1
-                className="text-3xl md:text-5xl font-bold mb-4 text-yellow-400"
+                className="mb-4 text-3xl font-bold text-yellow-400 md:text-5xl"
                 style={{ fontFamily: "var(--font-permanent-marker)" }}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -91,7 +91,7 @@ export default function CelebrationOverlay({
               </motion.h1>
 
               <motion.p
-                className="text-2xl md:text-3xl text-white mb-6"
+                className="mb-6 text-2xl text-white md:text-3xl"
                 style={{ fontFamily: "var(--font-permanent-marker)" }}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -114,7 +114,7 @@ export default function CelebrationOverlay({
               {onClose && (
                 <motion.button
                   onClick={onClose}
-                  className="mt-8 px-6 py-3 bg-yellow-500 text-purple-900 rounded-full font-bold hover:bg-yellow-400 transition-colors"
+                  className="mt-8 rounded-full bg-yellow-500 px-6 py-3 font-bold text-purple-900 transition-colors hover:bg-yellow-400"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.9 }}
@@ -126,10 +126,10 @@ export default function CelebrationOverlay({
           </div>
 
           {/* Corner decorations */}
-          <div className="absolute -top-2 -left-2 w-6 h-6 bg-yellow-400 rounded-full shadow"></div>
-          <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full shadow"></div>
-          <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-yellow-400 rounded-full shadow"></div>
-          <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full shadow"></div>
+          <div className="absolute -top-2 -left-2 h-6 w-6 rounded-full bg-yellow-400 shadow"></div>
+          <div className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-yellow-400 shadow"></div>
+          <div className="absolute -bottom-2 -left-2 h-6 w-6 rounded-full bg-yellow-400 shadow"></div>
+          <div className="absolute -right-2 -bottom-2 h-6 w-6 rounded-full bg-yellow-400 shadow"></div>
         </div>
       </motion.div>
     </motion.div>

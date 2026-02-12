@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "./ThemeContext";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -62,20 +62,20 @@ export default function MessageWall() {
 
   return (
     <motion.div
-      className="w-full max-w-2xl mb-12"
+      className="mb-12 w-full max-w-2xl"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 0.6 }}
     >
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+      <h2 className="mb-6 text-center text-2xl font-bold md:text-3xl">
         {theme === "stranger-things"
           ? "The Message Wall"
           : "Joyce's Christmas Lights"}
       </h2>
 
       {/* Letter Lights Grid */}
-      <div className="mb-8 p-6 rounded-lg light-wall-bg">
-        <div className="grid grid-cols-13 gap-2 md:gap-3 mb-6">
+      <div className="light-wall-bg mb-8 rounded-lg p-6">
+        <div className="mb-6 grid grid-cols-13 gap-2 md:gap-3">
           {ALPHABET.map((letter) => (
             <motion.div
               key={letter}
@@ -83,7 +83,7 @@ export default function MessageWall() {
               whileHover={{ scale: 1.1 }}
             >
               <motion.div
-                className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all duration-300"
+                className="flex h-8 w-8 items-center justify-center rounded-full border-2 text-xs font-bold transition-all duration-300 md:h-10 md:w-10"
                 style={{
                   backgroundColor: getLightColor(letter),
                   borderColor: getLightColor(letter),
@@ -120,7 +120,7 @@ export default function MessageWall() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message..."
-            className="w-full px-4 py-3 rounded-lg border-2 transition-all duration-300 focus:outline-none text-black"
+            className="w-full rounded-lg border-2 px-4 py-3 text-black transition-all duration-300 focus:outline-none"
             style={{
               borderColor: theme === "stranger-things" ? "#E71D36" : "#F9D059",
               backgroundColor:

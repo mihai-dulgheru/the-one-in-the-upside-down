@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "./ThemeContext";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState } from "react";
 import CelebrationOverlay from "./CelebrationOverlay";
+import { useTheme } from "./ThemeContext";
 
 export default function ProposalSection() {
   const { theme } = useTheme();
@@ -69,7 +69,7 @@ export default function ProposalSection() {
     <>
       <motion.section
         ref={containerRef}
-        className="relative w-full max-w-4xl mt-16 mb-12 min-h-[400px] p-8 rounded-2xl"
+        className="relative mt-16 mb-12 min-h-96 w-full max-w-4xl rounded-2xl p-8"
         style={{
           background:
             theme === "stranger-things"
@@ -86,7 +86,7 @@ export default function ProposalSection() {
       >
         {/* Heading */}
         <motion.h2
-          className="text-4xl md:text-6xl font-bold text-center mb-12 proposal-heading"
+          className="proposal-heading mb-12 text-center text-4xl font-bold md:text-6xl"
           style={{
             fontFamily: "var(--font-merriweather)",
             color: "#E71D36",
@@ -109,11 +109,11 @@ export default function ProposalSection() {
         </motion.h2>
 
         {/* Buttons Container */}
-        <div className="relative flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+        <div className="relative flex flex-col items-center justify-center gap-6 md:flex-row md:gap-8">
           {/* YES Button */}
           <motion.button
             onClick={handleYesClick}
-            className="px-12 py-6 text-2xl md:text-3xl font-bold rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110"
+            className="transform rounded-full px-12 py-6 text-2xl font-bold shadow-2xl transition-all duration-300 hover:scale-110 md:text-3xl"
             style={{
               background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
               color: "white",
@@ -132,7 +132,7 @@ export default function ProposalSection() {
           <motion.button
             ref={noButtonRef}
             onMouseEnter={handleNoHover}
-            className="absolute px-6 py-3 text-lg font-semibold rounded-full transition-all duration-200"
+            className="absolute rounded-full px-6 py-3 text-lg font-semibold transition-all duration-200"
             style={{
               background: isGlitching
                 ? "linear-gradient(135deg, #1a0000 0%, #E71D36 50%, #1a0000 100%)"
@@ -158,7 +158,7 @@ export default function ProposalSection() {
 
         {/* Helper text */}
         <motion.p
-          className="text-center mt-8 text-sm opacity-90"
+          className="mt-8 text-center text-sm opacity-90"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.9 }}
           transition={{ delay: 1.5 }}

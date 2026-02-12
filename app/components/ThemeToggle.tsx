@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Coffee, Utensils } from "lucide-react";
 import { useTheme } from "./ThemeContext";
-import { motion } from "framer-motion";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -11,7 +11,7 @@ export default function ThemeToggle() {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-50 p-4 rounded-full shadow-lg transition-all duration-500 hover:scale-110"
+      className="fixed top-6 right-6 z-50 rounded-full p-4 shadow-lg transition-all duration-500 hover:scale-110"
       style={{
         background: isFriends ? "#F9D059" : "#E71D36",
       }}
@@ -25,9 +25,9 @@ export default function ThemeToggle() {
         transition={{ duration: 0.5 }}
       >
         {isFriends ? (
-          <Coffee className="w-6 h-6 text-purple-900" strokeWidth={2.5} />
+          <Coffee className="h-6 w-6 text-purple-900" strokeWidth={2.5} />
         ) : (
-          <Utensils className="w-6 h-6 text-white" strokeWidth={2.5} />
+          <Utensils className="h-6 w-6 text-white" strokeWidth={2.5} />
         )}
       </motion.div>
     </motion.button>
